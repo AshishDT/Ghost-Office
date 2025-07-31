@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 
 // ignore_for_file: public_member_api_docs
 
-//Usage :
-// AppColors.kff0000;
 class AppColors {
   static const Color k000000 = Color(0xFF000000);
   static const Color kffffff = Color(0xFFFFFFFF);
@@ -13,4 +11,5 @@ class AppColors {
   static const Color kF6F6F6 = Color(0xFFF6F6F6);
   static const Color kA4A4A4 = Color(0xFFA4A4A4);
   static const Color k111111 = Color(0xFF111111);
+  static const Color kF8F9F9 = Color(0xFFF8F9F9);
 }

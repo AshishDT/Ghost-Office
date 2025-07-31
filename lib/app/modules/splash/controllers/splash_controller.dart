@@ -1,23 +1,33 @@
 import 'package:get/get.dart';
 
-class SplashController extends GetxController {
-  //TODO: Implement SplashController
+import '../../../data/repositories/app_info_repo.dart';
+import '../../../routes/app_pages.dart';
 
-  final count = 0.obs;
+/// Splash Controller
+class SplashController extends GetxController {
+  /// On Init
   @override
   void onInit() {
+    AppInfoRepo.initPackageInfo();
+
+    Future<void>.delayed(
+      const Duration(seconds: 1),
+      () {
+        Get.offAllNamed(Routes.DASHBOARD);
+      },
+    );
     super.onInit();
   }
 
+  /// On ready
   @override
   void onReady() {
     super.onReady();
   }
 
+  /// On close
   @override
   void onClose() {
     super.onClose();
   }
-
-  void increment() => count.value++;
 }

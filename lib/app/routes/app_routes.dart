@@ -6,8 +6,10 @@ abstract class Routes {
   Routes._();
 
   static const DASHBOARD = _Paths.DASHBOARD;
+  static const SPLASH = _Paths.SPLASH;
 }
 
 abstract class _Paths {
   static const DASHBOARD = '/dashboard';
+  static const SPLASH = '/splash';
 }
