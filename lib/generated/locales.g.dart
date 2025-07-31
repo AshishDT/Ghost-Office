@@ -13,6 +13,7 @@ class LocaleKeys {
   LocaleKeys._();
   static const app_name = 'app_name';
   static const dashboard = 'dashboard';
+  static const intro_text = 'intro_text';
   static const dialog_title = 'dialog_title';
   static const dialog_message = 'dialog_message';
   static const dialog_confirm_button = 'dialog_confirm_button';
@@ -21,8 +22,9 @@ class LocaleKeys {
 
 class Locales {
   static const en_US = {
-    'app_name': 'My Application',
+    'app_name': 'GhostOffice',
     'dashboard': 'Dashboard',
+    'intro_text': 'Agent-First Business OS',
     'dialog_title': 'Confirmation',
     'dialog_message': 'Are you sure you want to proceed?',
     'dialog_confirm_button': 'Yes',

@@ -2,9 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
-
 import '../../data/config/app_colors.dart';
+import '../../utils/app_text_style.dart';
 
 /// Onboarding app bar
 class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
@@ -48,7 +47,7 @@ class AppBarCommon extends StatelessWidget implements PreferredSizeWidget {
         centerTitle: true,
         title: Text(
           title,
-          style: GoogleFonts.poppins(
+          style: AppTextStyle.openRunde(
             color: AppColors.k000000,
             fontSize: 20.sp,
             fontWeight: FontWeight.w600,

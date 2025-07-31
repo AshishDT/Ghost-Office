@@ -1,6 +1,7 @@
 {
-  "app_name": "My Application",
+  "app_name": "GhostOffice",
   "dashboard": "Dashboard",
+  "intro_text": "Agent-First Business OS",
   "dialog": {
     "title": "Confirmation",
     "message": "Are you sure you want to proceed?",

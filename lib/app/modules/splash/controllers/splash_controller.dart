@@ -13,7 +13,7 @@ class SplashController extends GetxController {
     Future<void>.delayed(
       const Duration(seconds: 1),
       () {
-        Get.offAllNamed(Routes.DASHBOARD);
+        Get.offAllNamed(Routes.INTRO);
       },
     );
     super.onInit();

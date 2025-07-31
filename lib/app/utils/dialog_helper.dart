@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:ghost_office/app/utils/app_text_style.dart';
 import 'package:ghost_office/generated/locales.g.dart';
 
 import '../data/config/app_colors.dart';
@@ -106,7 +106,7 @@ class DialogHelper {
               Text(
                 title,
                 textAlign: TextAlign.left,
-                style: GoogleFonts.inter(
+                style: AppTextStyle.openRunde(
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.k000000.withValues(alpha: 82),
@@ -117,7 +117,7 @@ class DialogHelper {
                 Text(
                   msg,
                   textAlign: TextAlign.left,
-                  style: GoogleFonts.inter(
+                  style: AppTextStyle.openRunde(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: AppColors.k000000.withValues(alpha: 60),
@@ -130,8 +130,8 @@ class DialogHelper {
                 children: <Widget>[
                   Expanded(
                     child: AppButton(
-                      buttonColor: negativeButtonColor ?? AppColors.kA4A4A4,
-                      buttonText: negTxt,
+                      color: negativeButtonColor ?? AppColors.kA4A4A4,
+                      name: negTxt,
                       onPressed: () {
                         Get.back();
                         negative?.call();
@@ -141,8 +141,8 @@ class DialogHelper {
                   17.horizontalSpace,
                   Expanded(
                     child: AppButton(
-                      buttonColor: positiveButtonColor ?? AppColors.k00A4A6,
-                      buttonText: posTxt,
+                      color: positiveButtonColor ?? AppColors.k00A4A6,
+                      name: posTxt,
                       onPressed: () {
                         Get.back();
                         positive?.call();
@@ -180,7 +180,7 @@ class DialogHelper {
               Text(
                 title,
                 textAlign: TextAlign.left,
-                style: GoogleFonts.inter(
+                style: AppTextStyle.openRunde(
                   fontSize: 24.sp,
                   fontWeight: FontWeight.w600,
                   color: AppColors.k000000.withValues(alpha: 82),
@@ -191,7 +191,7 @@ class DialogHelper {
                 Text(
                   msg,
                   textAlign: TextAlign.left,
-                  style: GoogleFonts.inter(
+                  style: AppTextStyle.openRunde(
                     fontSize: 16.sp,
                     fontWeight: FontWeight.w600,
                     color: AppColors.k000000.withValues(alpha: 60),
@@ -201,9 +201,9 @@ class DialogHelper {
               36.verticalSpace,
               Center(
                 child: AppButton(
-                  buttonColor: buttonColor ?? AppColors.k00A4A6,
+                  color: buttonColor ?? AppColors.k00A4A6,
                   width: 150.w,
-                  buttonText: posTxt,
+                  name: posTxt,
                   onPressed: () {
                     Get.back();
                     positive?.call();

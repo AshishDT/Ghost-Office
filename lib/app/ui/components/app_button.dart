@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+import 'package:ghost_office/app/data/config/app_images.dart';
+import 'package:lottie/lottie.dart';
 import '../../data/config/app_colors.dart';
+import '../../utils/app_text_style.dart';
 
 /// A customizable elevated button with loading state,
 /// disabled state, and smooth animated background color transition.
 class AppButton extends StatelessWidget {
   /// Creates a custom button.
   const AppButton({
-    required this.buttonText,
+    required this.name,
     required this.onPressed,
     this.borderSide,
     this.height,
     this.style,
-    this.buttonColor,
-    this.borderRadius,
+    this.color,
+    this.radius,
     this.isLoading = false,
     this.isEnabled = true,
     this.width,
@@ -23,7 +25,7 @@ class AppButton extends StatelessWidget {
   }) : super(key: key);
 
   /// The text to display on the button.
-  final String buttonText;
+  final String name;
 
   /// Callback when the button is pressed.
   final void Function() onPressed;
@@ -41,10 +43,10 @@ class AppButton extends StatelessWidget {
   final TextStyle? style;
 
   /// Optional custom background color.
-  final Color? buttonColor;
+  final Color? color;
 
   /// Optional border radius (defaults to 28).
-  final BorderRadius? borderRadius;
+  final BorderRadius? radius;
 
   /// Whether to show the loading animation.
   final bool isLoading;
@@ -59,10 +61,10 @@ class AppButton extends StatelessWidget {
 
     // Determine background color based on state
     final Color bgColor = isLoading
-        ? AppColors.k101928
+        ? AppColors.kE7E8E9
         : isEnabled
-        ? buttonColor ?? AppColors.k00A4A6
-        : AppColors.k00A4A6;
+            ? color ?? AppColors.k9DBDF9
+            : AppColors.kE7E8E9;
 
     return GestureDetector(
       onTap: () {
@@ -78,13 +80,13 @@ class AppButton extends StatelessWidget {
         width: btnWidth,
         decoration: BoxDecoration(
           color: bgColor,
-          borderRadius: borderRadius ?? BorderRadius.circular(28).r,
+          borderRadius: radius ?? BorderRadius.circular(28).r,
           border: borderSide != null
               ? Border.all(
-            color: borderSide!.color,
-            width: borderSide!.width,
-            style: borderSide!.style,
-          )
+                  color: borderSide!.color,
+                  width: borderSide!.width,
+                  style: borderSide!.style,
+                )
               : null,
         ),
         child: Center(
@@ -95,14 +97,14 @@ class AppButton extends StatelessWidget {
                 Expanded(
                   child: Center(
                     child: Text(
-                      buttonText,
+                      name,
                       maxLines: 1,
                       overflow: TextOverflow.ellipsis,
                       style: style ??
-                          GoogleFonts.inter(
+                          AppTextStyle.openRunde(
                             fontSize: 16.sp,
                             fontWeight: FontWeight.w700,
-                            color: AppColors.kffffff,
+                            color: AppColors.k46494E,
                           ),
                     ),
                   ),
@@ -110,9 +112,9 @@ class AppButton extends StatelessWidget {
               ],
               if (isLoading) ...<Widget>[
                 15.horizontalSpace,
-                const Center(
-                  child: CircularProgressIndicator(
-                    color: AppColors.k000000,
+                Center(
+                  child: Lottie.asset(
+                    AppImages.loader,
                   ),
                 )
               ]
